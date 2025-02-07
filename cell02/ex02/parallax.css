@@ -1,31 +1,45 @@
-body{
-    background-color: #3f3f0f;
-    padding: 0%;
+body {
+    background-color: #ffffff;
+    padding: 0;
     box-sizing: border-box;
-    margin: 0%;
+    margin: 0;
+    width: 100%;
+    text-align: center;
 }
+
 .parallax {
     width: 100vw;
     height: 1000px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size:contain;
-}
-.a1{
-    
-    background-image: url("https://inwfile.com/s-ci/vsmr5o.jpg");
+    background-size: cover;
+    position: relative; /* เพิ่มบรรทัดนี้ */
 }
 
-.a2{
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFrn7-hSBSoOQz-wCbz1VUrIN3vPs-_Qhcuw&s");
+.a1 {
+    background-image: url("https://profile.line-scdn.net/0hvNPMiwFnKWFtNDvdIShWNlFxJwwaGi8pFVpuBUkzJ1RDUWk-AldnV080JVVEVG5iAQdjBkk2clBJ");
 }
 
-  .midline{
-    display: flex;
-    height: 100px; 
+.a2 {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1QcWO4AfkJT2-RS1EUHuoyNIs35Uad0dSbA&s");
+}
+
+.a1 .bg-1, .a2 .bg-2 { /* รวม selector */
+    position: absolute; /* เปลี่ยนเป็น absolute */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* จัดให้อยู่ตรงกลาง */
     color: white;
-    background-color: black; 
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.midline {
+    display: flex;
+    height: 100px;
+    color: white;
+    background-color: black;
     font-size: 36px;
     text-align: center;
     justify-content: center;
