@@ -1,20 +1,34 @@
-body, html {
-    height: 100%;
-  }
-  
-  .parallax {
-    background-image: url("img_parallax.jpg");
-  
-    height: 100%;
-  
+body{
+    background-color: #3f3f0f;
+    padding: 0%;
+    box-sizing: border-box;
+    margin: 0%;
+}
+.parallax {
+    width: 100vw;
+    height: 1000px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-  }
+    background-size:contain;
+}
+.a1{
+    
+    background-image: url("https://inwfile.com/s-ci/vsmr5o.jpg");
+}
 
-  @media only screen and (max-device-width: 1366px) {
-    .parallax {
-      background-attachment: scroll;
-    }
-  }
+.a2{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFrn7-hSBSoOQz-wCbz1VUrIN3vPs-_Qhcuw&s");
+}
+
+  .midline{
+    display: flex;
+    height: 100px; 
+    color: white;
+    background-color: black; 
+    font-size: 36px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}

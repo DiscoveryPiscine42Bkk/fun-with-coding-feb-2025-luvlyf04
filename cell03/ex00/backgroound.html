@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Background Toggle</title>
-</head>
-<body>
-    <button id="btn">Click me!</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="backgroound.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root" class="root">
+      <button onclick="handleBackground()">Click me</button>
+    </div>
     <script>
-        let clickCount = 0;
-        const colors = ["#f0f0f0", "darkgreen", "darkred"]; 
-
-        document.getElementById("btn").addEventListener("click", function() {
-            clickCount = (clickCount + 1) % colors.length;
-            document.body.style.backgroundColor = colors[clickCount];
-        });
+      function handleBackground() {
+        const root = document.getElementById("root").style;
+        const randomColor = () => Math.floor(Math.random() * 256);
+        root.backgroundColor = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
+      }
     </script>
-</body>
+  </body>
 </html>
