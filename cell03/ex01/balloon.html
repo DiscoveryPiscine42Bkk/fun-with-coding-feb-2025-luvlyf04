@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon Game</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #balloon {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="balloon"></div>
+    <script>
+        const balloon = document.getElementById("balloon");
+        const colorSet = ["red", "green", "blue"];
+        let size = 200;
+        let clickCount = 0; 
+        const minSize = 200; 
+
+        balloon.addEventListener("click", () => {
+            if (size < 420) {
+                size += 10;
+                clickCount = (clickCount + 1) % colorSet.length;
+            } else {
+                size = minSize;
+                clickCount = 0;
+            }
+            updateBalloon();
+        });
+
+        balloon.addEventListener("mouseleave", () => {
+            if (size > 200) {
+                size -= 5;
+                clickCount = (clickCount - 1 + colorSet.length) % colorSet.length; // ใช้ colorSet.length
+            }
+            updateBalloon();
+        });
+
+        function updateBalloon() {
+            balloon.style.width = `${size}px`;
+            balloon.style.height = `${size}px`;
+            balloon.style.backgroundColor = colorSet[clickCount];
+        }
+    </script>
+</body>
+</html>
